@@ -26,6 +26,10 @@ func Cwd() string {
 	return cwd
 }
 
+func ChangeCwd(path string) {
+	cwd = path
+}
+
 // ShortPath returns an absolute or relative name for path, whatever is shorter.
 func ShortPath(path string) string {
 	if rel, err := filepath.Rel(Cwd(), path); err == nil && len(rel) < len(path) {
